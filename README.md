@@ -9,7 +9,6 @@ Disclaimer PullUp is an educational prototype inspired by Uber’s backend archi
 It is not affiliated with endorsed by or representative of Uber Technologies Inc.  
 All trademarks names and references to Uber belong to their respective owners.
 
----
 
 ## Project Gist
 
@@ -17,7 +16,6 @@ This project models a ride hailing backend where rides and drivers are independe
 
 The goal is not feature completeness but architectural correctness and learning through real failure modes.
 
----
 
 ## Motivation
 
@@ -30,7 +28,6 @@ This project was built to
 - Embrace eventual consistency and failure aware design  
 - Experience and document real distributed systems pitfalls
 
----
 
 ## High Level Architecture
 
@@ -55,7 +52,6 @@ Geospatial index of available drivers derived state only
 - No service makes synchronous calls to another service.  
 - No databases are shared.
 
----
 
 ## Core Event Flow
 
@@ -81,8 +77,8 @@ OFFLINE → AVAILABLE → BUSY → AVAILABLE
 State transitions are enforced via intent based methods.  
 Entities expose no public setters ensuring domain invariants remain intact.
 
-### State Machine Diagram
-![State Machine Diagram](UML_Diagrams/StateMachineDiagram.png)
+### Ride State Machine Diagram
+![Ride State Machine Diagram](UML_Diagrams/StateMachineDiagram.png)
 
 ---
 
@@ -95,14 +91,19 @@ The domain model is explicitly separated from external facing DTOs to prevent le
 #### Entity Model
 ![Rider Service Entities](UML_Diagrams/RiderServiceEntities.png)
 
+---
+
 #### DTO Model
 ![Rider Service DTOs](UML_Diagrams/RiderServiceDtoDiagram.png)
+
+---
 
 ### Driver Service
 
 #### Entity Model
 ![Driver Service Entities](UML_Diagrams/DriverServiceEntities.png)
 
+---
 #### DTO Model
 ![Driver Service DTOs](UML_Diagrams/DriverServiceDtoDiagram.png)
 
@@ -128,8 +129,6 @@ Redis is used strictly as a derived non authoritative data store.
 
 Redis never owns correctness it enables fast lookup not enforcement.
 
----
-
 ## Kafka and Event Design
 
 - Explicit JSON contracts  
@@ -141,8 +140,6 @@ Redis never owns correctness it enables fast lookup not enforcement.
 
 Kafka is treated as a coordination log not a message queue.
 
----
-
 ## Technology Stack
 
 ### Core Backend Technologies
@@ -153,26 +150,20 @@ Kafka is treated as a coordination log not a message queue.
 ![Spring Kafka](https://img.shields.io/badge/Spring%20Kafka-6DB33F?style=for-the-badge&logo=apache-kafka&logoColor=white)
 ![Spring Data Redis](https://img.shields.io/badge/Spring%20Data%20Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
----
 
 ### Messaging and Streaming
 
 ![Apache Kafka](https://img.shields.io/badge/Apache%20Kafka-000000?style=for-the-badge&logo=apache-kafka&logoColor=white)
 
----
 
 ### Databases and Storage
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
----
-
 ### Containerization and Runtime
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
----
 
 ### Architecture and Design
 
@@ -180,9 +171,6 @@ Kafka is treated as a coordination log not a message queue.
 ![Explicit State Machines](https://img.shields.io/badge/Explicit%20State%20Machines-FF6F00?style=for-the-badge)
 ![Eventually Consistent Workflows](https://img.shields.io/badge/Eventually%20Consistent%20Workflows-607D8B?style=for-the-badge)
 
-
-
----
 
 ## Known Issues and Learnings
 
@@ -195,14 +183,11 @@ This project intentionally documents real development pitfalls.
 
 In a production system these would be addressed using topic versioning DLQs retention policies and schema governance.
 
----
 
 ## Current Debugging Work
 
 - Cleaning historical Kafka messages with legacy type headers  
 - Improving consumer error isolation  
-
----
 
 ## Future Enhancements
 
@@ -214,8 +199,6 @@ In a production system these would be addressed using topic versioning DLQs rete
 - Infrastructure : Kubernetes orchestration , Spring Cloud features , Centralized configuration management  
 
 These features can be layered without changing core domain logic.
-
----
 
 ## Final Note
 
