@@ -1,0 +1,12 @@
+{
+  "eventType": "DriverAssignmentAccepted",
+  "version": 1,
+  "owner": "DriverService",
+  "description": "Emitted when a driver successfully accepts a ride assignment",
+  "compatibility": "BACKWARD",
+  "fields": {
+    "rideId": "uuid",
+    "driverId": "uuid",
+    "acceptedAt": "iso-8601"
+  }
+}

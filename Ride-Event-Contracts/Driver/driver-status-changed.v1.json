@@ -1,0 +1,15 @@
+{
+    "eventType":"DriverStatusChanged",
+    "version":1,
+    "owner":"DriverService",
+    "description":"Emitted whenever a driver changes their current Status",
+    "compatibility":"BACKWARD",
+    "fields":{
+        "driverId":"uuid",
+        "latitude":"double",
+        "longitude":"double",
+        "oldStatus":"enum(OFFLINE,AVAILABLE,BUSY)",
+        "newStatus":"enum(OFFLINE,AVAILABLE,BUSY)",
+        "ocurredAt":"iso-8601"
+    }
+}

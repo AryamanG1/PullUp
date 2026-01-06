@@ -1,0 +1,13 @@
+{
+  "eventType": "DriverAssignmentRejected",
+  "version": 1,
+  "owner": "DriverService",
+  "description": "Emitted when a proposed driver assignment cannot be completed",
+  "compatibility": "BACKWARD",
+  "fields": {
+    "rideId": "uuid",
+    "driverId": "uuid",
+    "reason": "string",
+    "rejectedAt": "iso-8601"
+  }
+}

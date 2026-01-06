@@ -1,0 +1,14 @@
+{
+  "eventType": "RideRequested",
+  "version": 1,
+  "owner": "RiderService",
+  "description": "Emitted when a rider creates a request for a ride",
+  "compatibility":"BACKWARD",
+  "fields": {
+    "rideId":"uuid",
+    "riderId":"uuid",
+    "pickupLatitude":"double",
+    "pickupLongitude":"double",
+    "occurredAt":"iso-8601"
+  }
+}

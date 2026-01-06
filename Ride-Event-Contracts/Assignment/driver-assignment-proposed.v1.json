@@ -1,0 +1,14 @@
+{
+  "eventType": "DriverAssignmentProposed",
+  "version": 1,
+  "owner": "MatchingService",
+  "description": "Emitted when the matching service proposes a driver for a ride",
+  "compatibility": "BACKWARD",
+  "fields": {
+    "rideId": "uuid",
+    "driverId": "uuid",
+    "pickupLongitude": "double",
+    "pickupLatitude": "double",
+    "proposedAt": "iso-8601"
+  }
+}

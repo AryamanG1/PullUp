@@ -1,0 +1,14 @@
+{
+  "eventType": "RideCancelled",
+  "version": 1,
+  "owner": "RiderService",
+  "description": "Emitted when a ride is cancelled by the rider or system before completion",
+  "compatibility":"BACKWARD",
+  "fields": {
+    "rideId":"uuid",
+    "riderId":"uuid",
+    "cancelledBy":"enum(RIDER,SYSTEM)",
+    "reason":"String",
+    "occurredAt":"iso-8601"
+  }
+}

@@ -1,0 +1,14 @@
+{
+    "eventType":"DriverLocationUpdated",
+    "version":1,
+    "owner":"DriverService",
+    "description":"Emmitted whenever a driver updates their current geographic location",
+    "compatibility":"BACKWARD",
+    "fields":{
+        "driverId":"uuid",
+        "latitude":"double",
+        "longitude":"double",
+        "occuredAt":"iso-8601",
+        "status":"enum(OFFLINE,AVAILABLE,BUSY)"
+    }
+}
