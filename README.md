@@ -1,5 +1,5 @@
 # PullUp 
-PullUp is an educational backend prototype inspired by Uber’s large scale event driven architecture.  
+PullUp is a backend prototype inspired by Uber’s large scale event driven architecture.  
 It explores real system design concepts such as domain driven design, state machines, Kafka based coordination, Redis geospatial indexing and eventual consistency while deliberately avoiding CRUD centric or synchronous designs.
 
 
